@@ -4,8 +4,8 @@ class basicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width*0.4,
-      height: MediaQuery.of(context).size.height*0.8,
+      width: MediaQuery.of(context).size.width * 0.4,
+      height: MediaQuery.of(context).size.height * 0.8,
       margin: EdgeInsets.all(0),
       padding: EdgeInsets.only(left: 100, top: 150),
       decoration: BoxDecoration(
@@ -15,15 +15,13 @@ class basicWidget extends StatelessWidget {
             width: 2,
           ),
           borderRadius: BorderRadius.circular(10),
-          boxShadow:[
+          boxShadow: [
             BoxShadow(
-            color:Colors.grey,
-            spreadRadius:10, 
-            blurRadius: 10,
-            offset: Offset(
-              10,10
+              color: Colors.grey,
+              spreadRadius: 10,
+              blurRadius: 10,
+              offset: Offset(10, 10),
             ),
-          ),
           ]),
       child: Text('Demo App By Geo'),
     );

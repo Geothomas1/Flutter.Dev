@@ -6,7 +6,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Demo App',
       home: Scaffold(
-        body: Center(child: SingleChildLayout()),
+        body:SingleChildLayout(),
       ),
     );
   }

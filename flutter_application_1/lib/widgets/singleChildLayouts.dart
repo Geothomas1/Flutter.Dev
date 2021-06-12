@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 class SingleChildLayout extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Container(
-      width: 400,
-      height: 400,
-      color: Colors.green,
+    return SizedBox(
+      width: 200,
+      height: 100,
       child:Center(
-      child: Text("HELLO WORLD"),
-    )
+        child:Text("Hello World")
+      ) ,
     );
   }
 }

@@ -7,10 +7,10 @@ class MultiChildLayoutWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       color: Colors.grey,
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
-        textDirection: TextDirection.rtl,
+        verticalDirection: VerticalDirection.down,
         children: <Widget>[
           Container(
             width: 200,

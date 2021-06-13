@@ -1,33 +1,45 @@
 import 'package:flutter/material.dart';
-class StackWidget extends StatelessWidget{
+
+class StackWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+  Widget build(BuildContext context) {
+    return Center(
+      child:Container(
+      width: 400,
+      height: 400,
       color: Colors.grey,
-      child: Stack(
-        textDirection: TextDirection.rtl,
-        alignment: Alignment.bottomCenter,
-        children:<Widget> [
-          Align(
-            alignment: Alignment.topLeft,
+      child: Stack( 
+        children: <Widget>[
+          Positioned(
+            left: 10,
+            top: 80,
             child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.green,
+              width: 100,
+              height: 50,
+              color: Colors.pink,
+            ),
           ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
+          Positioned(
+            right: 10,
+            top: 20,
             child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.pink,
+              width: 50,
+              height: 50,
+              color: Colors.yellow,
+            ),
           ),
+          Positioned(
+            top: 10,
+            bottom: 20,
+            child: Container(
+              width: 50,
+              height: 50,
+              color: Colors.red,
+            ),
           ),
         ],
       ),
+    )
     );
   }
 }

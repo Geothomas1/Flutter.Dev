@@ -14,27 +14,24 @@ class StackWidget extends StatelessWidget {
             left: 10,
             top: 80,
             child: Container(
-              width: 100,
-              height: 50,
+              width: 200,
+              height: 200,
               color: Colors.pink,
+              child: Image.asset("assets/img1.jpeg"),
             ),
           ),
           Positioned(
             right: 10,
             top: 20,
             child: Container(
-              width: 50,
-              height: 50,
+              width: 200,
+              height: 200,
               color: Colors.yellow,
-            ),
-          ),
-          Positioned(
-            top: 10,
-            bottom: 20,
-            child: Container(
-              width: 50,
-              height: 50,
-              color: Colors.red,
+              child: Image(
+                image: AssetImage(
+                  "assets/img2.jpg"
+                ),
+              ),
             ),
           ),
         ],

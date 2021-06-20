@@ -302,9 +302,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             // print();
                             var client = http.Client();
                             try {
-                             
+                             print(emailId);
                               var url = Uri.parse('http://localhost:3000/users/register');
                               var response = await http.post(url, body: {'name':name,'regNo':regNo,'chassisNo':chassisNo,'emailId':emailId,'phoneNo':phoneNo,'password':password});
+                              print(response);
                               print('Response status: ${response.statusCode}');
                               print('Response body: ${response.body}');
                             } catch (e) {

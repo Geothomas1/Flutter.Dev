@@ -1,7 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './user_home.dart';
+import 'package:gpsproject/Screens/user_home.dart';
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -16,6 +16,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String emailId = "";
+  String password = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,17 +38,23 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 48.0,
             ),
-            Center(child: Text('Sukhad Yathra',style: TextStyle(fontSize: 35,fontWeight: FontWeight.w900))),
+            Center(
+                child: Text('Sukhad Yathra',
+                    style:
+                        TextStyle(fontSize: 35, fontWeight: FontWeight.w900))),
             SizedBox(
               height: 48.0,
             ),
             TextField(
               style: TextStyle(color: Colors.black54),
               onChanged: (value) {
+                if (value.isNotEmpty) {
+                  emailId = value;
+                }
                 //Do something with the user input.
               },
               decoration: InputDecoration(
-                hintText: 'Enter Your Username.',
+                hintText: 'Enter Your Email-Id.',
                 hintStyle: TextStyle(
                     color: Colors.black38, fontStyle: FontStyle.italic),
                 contentPadding:
@@ -72,6 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: true,
               style: TextStyle(color: Colors.black),
               onChanged: (value) {
+                if (value.isNotEmpty) {
+                  password = value;
+                }
                 //Do something with the user input.
               },
               decoration: InputDecoration(
@@ -105,13 +116,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
-                    //Implement login functionality.
-                    // Navigator.pushNamed(context, ChatScreen.id);
-                    Navigator.push(
+                  onPressed: () async {
+                    print(emailId);
+                    print(password);
+                    var client = http.Client();
+                    try {
+                      var url =
+                          Uri.parse('http://localhost:3000/users/login');
+                      var response = await http.post(url, body: {
+                        'emailId':emailId,
+                        'password':password
+                      });
+                      print(response);
+                      print('Response status: ${response.statusCode}');
+                      print('Response body: ${response.body}');
+                      if(response.statusCode==200){
+                        Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => UserHome()),
                     );
+                      }
+                       
+                    } catch (e) {
+                      debugPrint("something went wrong");
+                      throw e.toString();
+                    } finally {
+                      client.close();
+                    }
+                   
                   },
                   minWidth: 200.0,
                   height: 42.0,

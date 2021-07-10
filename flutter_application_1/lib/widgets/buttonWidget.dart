@@ -8,16 +8,12 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: TextButton(
-          onPressed: buttonClick,
-          style: TextButton.styleFrom(
-            textStyle:TextStyle(fontSize: 30,
-            backgroundColor: Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5),
-            height: 5,
-            ),
-          ),
-          child: Text("Click Me"),
-        ),
+        child: OutlinedButton(
+          onPressed: ()=>{
+            print('Clicked ok')
+          },
+          child: Text("Clcik Me"),
+        )
       ),
     );
   }

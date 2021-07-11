@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './widgets/buttonWidget.dart';
+import './widgets/textWidget.dart';
 
 class App extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Demo App',
       home: Scaffold(
-        body: ButtonWidget(),
+        body: TextWidget(),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.lightGreen,

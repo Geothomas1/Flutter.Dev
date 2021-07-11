@@ -5,14 +5,16 @@ class TextWidget extends StatelessWidget{
   Widget build(BuildContext context){
     return Container(
       child: Center(
-        child: Text("Hello Geo",style: TextStyle(
-          color: Colors.red,
-          fontSize: 30,
-          fontWeight: FontWeight.w900,
-          letterSpacing:2,
-          wordSpacing: 20,
-          fontStyle: FontStyle.italic
-        ),),
+        child: TextField(
+          keyboardType: TextInputType.name,
+          onChanged:(String textValue){
+            print(textValue);
+          },
+          onTap: ()=>{
+            print("Tap happend")
+          },
+          enabled: true,
+        )
       ),
     );
   }

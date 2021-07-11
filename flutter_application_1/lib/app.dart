@@ -8,7 +8,7 @@ class App extends StatelessWidget {
       title: 'Demo App',
       home: Scaffold(
         body: TextWidget(),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.lightGreen,
           elevation: 10,

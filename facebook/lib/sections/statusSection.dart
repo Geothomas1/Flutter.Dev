@@ -1,18 +1,12 @@
+
 import 'package:facebook/post.dart';
 import 'package:flutter/material.dart';
-
+import '../widgets/imageIcons.dart';
 class StatusSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(200),
-        child: Image.asset(
-        dq,
-        width: 50,
-        height:50,
-      ),
-      ),
+      leading:ImageIcons(imageName: dq,),
       title: TextField(
         decoration: InputDecoration(
           hintText: "What on your mind ....",

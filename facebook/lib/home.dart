@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import './widgets/appBarbutton.dart';
 import './sections/statusSection.dart';
+import './sections/headerButtonSection.dart';
+import './sections/roomSection.dart';
+
 class Home extends StatelessWidget {
+  Widget divider({@required double thikness, @required Color color}) {
+    return Divider(
+      thickness: thikness,
+      color: color,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +43,11 @@ class Home extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          StatusSection()
+          StatusSection(),
+          divider(thikness: 1, color: Colors.grey[300]),
+          HeaderButtonSection(),
+          divider(thikness: 10, color: Colors.grey[300]),
+          RoomSection(),
         ],
       ),
     ));

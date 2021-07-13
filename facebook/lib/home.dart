@@ -1,8 +1,10 @@
+import 'package:facebook/sections/storySection.dart';
 import 'package:flutter/material.dart';
-import './widgets/appBarbutton.dart';
+import 'widgets/circularButton.dart';
 import './sections/statusSection.dart';
 import './sections/headerButtonSection.dart';
 import './sections/roomSection.dart';
+import './sections/storySection.dart';
 
 class Home extends StatelessWidget {
   Widget divider({@required double thikness, @required Color color}) {
@@ -27,16 +29,16 @@ class Home extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
         actions: [
-          AppBarButton(
-            appBarButtons: Icons.search,
+          CircularButton(
+            circularButtons: Icons.search,
             buttonAction: () => {print("search button clicked")},
           ),
-          AppBarButton(
-            appBarButtons: Icons.notifications,
+          CircularButton(
+            circularButtons: Icons.notifications,
             buttonAction: () => {print("alert button clicked")},
           ),
-          AppBarButton(
-            appBarButtons: Icons.message,
+          CircularButton(
+            circularButtons: Icons.message,
             buttonAction: () => {print("message button clicked")},
           ),
         ],
@@ -48,6 +50,8 @@ class Home extends StatelessWidget {
           HeaderButtonSection(),
           divider(thikness: 10, color: Colors.grey[300]),
           RoomSection(),
+          divider(thikness: 5, color: Colors.grey[300]),
+          StorySection(),
           divider(thikness: 5, color: Colors.grey[300]),
         ],
       ),

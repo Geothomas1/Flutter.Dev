@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class ImageIcons extends StatelessWidget {
   final String imageName;
-  ImageIcons({@required this.imageName});
+  final bool displayStatus;
+  ImageIcons({@required this.imageName, @required this.displayStatus});
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -17,17 +19,20 @@ class ImageIcons extends StatelessWidget {
           ),
         ),
       ),
-      Positioned(
-          right: 0,
-          bottom: 0,
-          child: Container(
-            width: 15,
-            height: 15,
-            decoration: BoxDecoration(
-                color: Colors.green,
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2)),
-          ))
+      displayStatus == true
+          ? Positioned(
+              right: 0,
+              bottom: 0,
+              child: Container(
+                width: 15,
+                height: 15,
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 2)),
+              ),
+            )
+          : SizedBox()
     ]);
   }
 }

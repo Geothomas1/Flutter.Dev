@@ -6,3 +6,7 @@ String spr='assets/post/spr.jpg';
 String sunnyandtovino='assets/post/sunnandtovino.jpg';
 String tovino='assets/post/tovino.jpg';
 String joseph='assets/post/joseph.jpg';
+String sebin='assets/post/sebin.jpg';
+String copa='assets/status/copa.jpg';
+String fishingf='assets/status/fishingf.jpg';
+String josephstatus='assets/status/joseph.jpg';

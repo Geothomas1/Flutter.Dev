@@ -4,7 +4,9 @@ import '../widgets/imageIcons.dart';
 
 class RoomSection extends StatelessWidget {
   Widget createRoomButton() {
-    return OutlinedButton.icon(
+    return Container(
+      padding: EdgeInsets.only(left:3,right:4),
+      child:OutlinedButton.icon(
       onPressed: () => {},
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
@@ -18,18 +20,19 @@ class RoomSection extends StatelessWidget {
         Icons.video_call,
         color: Colors.blue,
       ),
+    )
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(1),
       height: 50,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
           createRoomButton(),
-          ImageIcons(imageName: dq),
           ImageIcons(imageName: noorin),
           ImageIcons(imageName: pr),
           ImageIcons(imageName: sharuk),

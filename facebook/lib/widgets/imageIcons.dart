@@ -4,10 +4,14 @@ class ImageIcons extends StatelessWidget {
   final String imageName;
   final bool displayStatus;
   final bool displayBorder;
+  final double imageW;
+  final double imageH;
   ImageIcons(
       {@required this.imageName,
       @required this.displayStatus,
-      this.displayBorder = false});
+      this.displayBorder = false,
+      this.imageH = 50,
+      this.imageW = 50});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +27,8 @@ class ImageIcons extends StatelessWidget {
           borderRadius: BorderRadius.circular(200),
           child: Image.asset(
             imageName,
-            width: 50,
-            height: 50,
+            width: imageW,
+            height: imageH,
           ),
         ),
       ),

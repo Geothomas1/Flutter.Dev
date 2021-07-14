@@ -1,6 +1,7 @@
 import 'package:facebook/widgets/verifiedTick.dart';
 import 'package:flutter/material.dart';
 import 'imageIcons.dart';
+import './footerPostButton.dart';
 
 class PostCard extends StatelessWidget {
   final String profileImage;
@@ -29,7 +30,9 @@ class PostCard extends StatelessWidget {
         postCardHeader(),
         titleSection(),
         imageSection(),
-        footerSection()
+        footerSection(),
+        hdivider(thikness: 2, color: Colors.grey[300]),
+        postImageAction()
       ]),
     );
   }
@@ -130,7 +133,10 @@ class PostCard extends StatelessWidget {
                   imageW: 20,
                 ),
                 IconButton(
-                    icon: Icon(Icons.arrow_drop_down),
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.grey[700],
+                    ),
                     onPressed: () => {print("menu clicked")}),
               ],
             ),
@@ -147,10 +153,45 @@ class PostCard extends StatelessWidget {
     );
   }
 
+  Widget divider() {
+    return VerticalDivider(
+      thickness: 1,
+      color: Colors.grey[600],
+    );
+  }
+  Widget hdivider({@required double thikness, @required Color color}) {
+    return Divider(
+      thickness: thikness,
+      color: color,
+    );
+  }
+
   Widget postImageAction() {
     return Container(
+       height: 35,
+       padding: EdgeInsets.only(),
       child: Row(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FooterPostButton(
+              buttonText: "Like",
+              buttonIcon: Icons.thumb_up,
+              buttonAction: () => {print("Like action")},
+              buttonColor: Colors.black),
+              divider(),
+          FooterPostButton(
+              buttonText: "Comment",
+              buttonIcon: Icons.comment,
+              buttonAction: () => {print("Like action")},
+              buttonColor: Colors.black), 
+              divider(),  
+          FooterPostButton(
+              buttonText: "Share",
+              buttonIcon: Icons.share,
+              buttonAction: () => {print("Like action")},
+              buttonColor: Colors.black),
+
+        ],
       ),
     );
   }

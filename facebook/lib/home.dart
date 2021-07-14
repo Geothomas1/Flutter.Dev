@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
             commentCount: "1K",
             shareCount: "2K",
           ),
-          divider(thikness: 5, color: Colors.grey[300]),
+          divider(thikness: 2, color: Colors.grey[300]),
           PostCard(
             postOwner: "Noorin",
             profileImage: noorin,

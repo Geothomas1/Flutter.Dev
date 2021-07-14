@@ -10,3 +10,4 @@ String sebin='assets/post/sebin.jpg';
 String copa='assets/status/copa.jpg';
 String fishingf='assets/status/fishingf.jpg';
 String josephstatus='assets/status/joseph.jpg';
+String sebinpost='assets/status/sebinpost.jpg';
